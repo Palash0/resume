@@ -11,6 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{etoolbox}
 \input{glyphtounicode}
 
 \pagestyle{fancy}
@@ -92,6 +93,12 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%----------Variables-------------
+\newtoggle{Finance}
+\togglefalse{Finance}
+%--------------------------------
+
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,16 +182,30 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{CoronOS}
-    {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors.}
-    \resumeSubItem{Dubit}
-      {{\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
-    \resumeSubItem{\href{https://lovesong.dating}{LoveSong}}
-      {Dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
-    \resumeSubItem{Basketball bets}
+    \iftoggle{Finance}{
+      \resumeSubItem{CoronOS}
+        {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors.}
+      \resumeSubItem{Basketball bets}
       {Compiled fantasy basketball betting data from rotogrinders and trained a tree-based model to pick teams and make predictions. Made \$60k in backtests.}
-    \resumeSubItem{Vision}
+      \resumeSubItem{\href{https://lovesong.dating}{LoveSong}}
+      {Dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
+      \resumeSubItem{Dubit}
+      {{\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
+      \resumeSubItem{Vision}
       {Improves web-interactivity for visually impaired users by adding conversational navigation to Chrome. Browser extension in {\bf JavaScript}, used Google Speech and Voice APIs}
+    }{
+      \resumeSubItem{CoronOS}
+      {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors.}
+      \resumeSubItem{\href{https://lovesong.dating}{LoveSong}}
+      {Dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
+      \resumeSubItem{Dubit}
+      {{\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
+      \resumeSubItem{Vision}
+      {Improves web-interactivity for visually impaired users by adding conversational navigation to Chrome. Browser extension in {\bf JavaScript}, used Google Speech and Voice APIs}
+      \resumeSubItem{Basketball bets}
+      {Compiled fantasy basketball betting data from rotogrinders and trained a tree-based model to pick teams and make predictions. Made \$60k in backtests.}
+    }
+
   \resumeSubHeadingListEnd
 
 %
