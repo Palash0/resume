@@ -13,7 +13,7 @@
 \usepackage{tabularx}
 \usepackage{etoolbox}
 \input{glyphtounicode}
-
+% move TA to bottom sections, move some relevant honors upwards
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
@@ -46,6 +46,12 @@
 \newcommand{\resumeItem}[2]{
   \item\small{
     \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemNoBold}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
   }
 }
 
@@ -108,7 +114,7 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://palashtaneja.com/}{\Large Palash Taneja}} & Email : \href{mailto:tanejapalash@gmail.com}{tanejapalash@gmail.com}\\
+  \textbf{\href{https://palashtaneja.com/}{\LARGE Palash Taneja}} & Email : \href{mailto:tanejapalash@gmail.com}{tanejapalash@gmail.com}\\
   \href{https://ptaneja.com}{https://ptaneja.com} & Mobile : \href{tel:7378889221}{+1-737-888-9221} \\
 \end{tabular*}
 
@@ -118,9 +124,19 @@
   \resumeSubHeadingListStart
     \resumeSubheadingTop
       {University of Texas at Austin}{Austin, TX}
-      {Bachelor of Science in Computer Science Honors;  GPA: 3.83}{Aug. 2019 -- Dec. 2022}
-      \resumeSubSubheadingTop{Operating Systems Honors, Data Structures Hon., Data Mining Hon., Computer Architecture Hon.}{}
-      \resumeSubSubheadingTop{Network Security Hon., Concurrency Hon., Algorithms Hon.}{}
+      {Bachelor's of Science in Computer Science Honors;  GPA: 3.85}{Aug 2019 -- May 2023}
+      \resumeSubHeadingListStart
+      \vspace*{-4pt}
+        \resumeItemNoBold{Natural Sciences Waiver, highly competitive scholarship awarded to $<$10 students out of 12,000 undergraduates}
+        \resumeItemNoBold{Machine Learning Honors, Computer Networks, Concurrency Hon., Network Security Hon., Operating Systems Hon.}
+      \resumeSubHeadingListEnd
+      % \iftoggle{Finance}
+      % {
+      %   \resumeSubSubheading{Machine Learning Honors, Computer Networks, Concurrency Hon., Network Security Hon., Operating Systems Hon.}{}
+      % }{
+      %   % put more keywords here
+      %   \resumeSubSubheading{Concurrency Honors, Machine Learning Hon., Computer Networks, Network Security Hon., Operating Systems Hon.}{}
+      % }
   \resumeSubHeadingListEnd
 
 
@@ -129,23 +145,45 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Bloomberg L.P.}{New York, NY}
-      {Software Engineering Intern}{June 2020 - August 2020}
-      \resumeItemListStart
-        \resumeItem{Derivatives}
-        {Worked on team doing real-time financial derivatives data analysis in Python.}
-        \resumeItem{Data Science}{Built fault detection system for machine learning system using statistical methods in scikit-learn}
-        \resumeItem{Backend}{Improved database queries, increasing performance for my workloads by upto {\bf 500\%}.}
-        \resumeItem{Full Stack}
-          {Deployed a data visualization web-app in {\bf Python (Flask)} and {\bf React}. Project led to improved employee productivity by decreasing time to get metrics by {\bf 10x}}
-      \resumeItemListEnd
+    {Bloomberg L.P.}{New York, NY}
+    {Software Engineering Intern}{May 2021 - Present}
+    \resumeItemListStart
+      \resumeItemNoBold{Designed a search engine architecture to serve user queries on news data visualization using {\bf Apache Solr}}
+      \resumeItemNoBold{Aggregated news user analytics in {\bf C++} from a global news and user network using {\bf Kafka}}
+      \resumeItemNoBold{Organized a developer education program for using No-SQL over traditional SQL databases in Bloomberg News}
+    \resumeItemListEnd
 
-      \resumeSubheading
+    \resumeSubheading
       {University of Texas at Austin}{Austin, TX}{Teaching Assistant}{Jan 2021 - Present}
       \resumeItemListStart
         \resumeItem{Operating Systems}
           {Taught {\bf C++} for systems, multithreading, synchronization, and virtual memory to 50 students. Guiding students to build an operating system kernel and GUI from scratch.}
       \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Bloomberg L.P.}{New York, NY}
+      {Software Engineering Intern}{Jun 2020 - Aug 2020}
+      \resumeItemListStart
+        % \resumeItem{Derivatives}
+        % {Worked on team doing real-time financial derivatives data analysis in Python.}
+        \resumeItem{Data Science}{Designed anomaly detection for machine learning system in {\bf scikit-learn} using statistical methods}
+        \resumeItem{Backend}{Improved SQL database queries, increasing performance for my workloads by upto {\bf 500\%}}
+        \resumeItem{Full Stack}
+          {Deployed a data visualization web-app in {\bf Python (Flask)} and {\bf React}. Project led to improved employee productivity by decreasing time to get key metrics by 10x}
+      \resumeItemListEnd
+
+      \iftoggle{Finance}{
+        \resumeSubheading
+        {University Computational Finance}{Austin, TX}
+        {Director}{Jan 2021 - Present}
+        \resumeItemListStart
+          \resumeItem{Arbitrage}{Developed project in C++ to trade on arbitrage in virtual economies of games like TF2 and CSGO}
+          \resumeItem{SPACs}{Researched arbitrage in Special Acquisition Companies and products related to them: warrants}
+        \resumeItemListEnd
+      }{
+
+      }
       
 % --------Multiple Positions Heading------------
 %    \resumeSubSubheading
@@ -156,54 +194,39 @@
 %     \resumeItemListEnd
 %    \resumeSubHeadingListEnd
 %-------------------------------------------
-
-    \resumeSubheading
-      {University Computational Finance Club}{Austin, TX}
-      {Director}{Spring 2020 - Present}
-      \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Managed a \$10k portfolio. Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine for simulating, backtesting strategies.}
-        \resumeItem{WallStreetBets}
-          {Pandas, React dashboard monitoring /r/WallStreetBets' topics for momentum investing}
-      \resumeItemListEnd
-
-      \resumeSubheading
-      {Facebook}{Mountain View, CA}
-      {Content Creator}{June 2020 - Oct 2020}
-      \resumeItemListStart
-        \resumeItem{Platform}
-          {Helped to create content and shape an early-stage Facebook iOS app targeted to my demographic}
-      \resumeItemListEnd
+      % \resumeSubheading
+      % {Facebook}{Mountain View, CA}
+      % {Content Creator}{June 2020 - Oct 2020}
+      % \resumeItemListStart
+      %   \resumeItem{Platform}
+      %     {Helped to create content and shape an early-stage Facebook iOS app targeted to my demographic}
+      % \resumeItemListEnd
     
 
   \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------------
-\section{Projects}
+\section{Leadership and Projects}
   \resumeSubHeadingListStart
     \iftoggle{Finance}{
+      \resumeSubItem{Computer Architecture Research}
+        {Researched on using machine learning methods (LSTMs) to find a cache replacement policy that has an 8.9\% better cache hit-rate improvement over LRU}
       \resumeSubItem{CoronOS}
-        {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors.}
-      \resumeSubItem{Basketball bets}
-      {Compiled fantasy basketball betting data from rotogrinders and trained a tree-based model to pick teams and make predictions. Made \$60k in backtests.}
+        {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors (AARCH64).}
       \resumeSubItem{\href{https://lovesong.dating}{LoveSong}}
-      {Dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
+      {Created a dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
       \resumeSubItem{Dubit}
-      {{\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
-      \resumeSubItem{Vision}
-      {Improves web-interactivity for visually impaired users by adding conversational navigation to Chrome. Browser extension in {\bf JavaScript}, used Google Speech and Voice APIs}
+      {Created a {\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
     }{
       \resumeSubItem{CoronOS}
       {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors.}
       \resumeSubItem{\href{https://lovesong.dating}{LoveSong}}
-      {Dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
+      {Created a dating app that matches people using clustering machine learning algorithms trained on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
       \resumeSubItem{Dubit}
-      {{\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
-      \resumeSubItem{Vision}
-      {Improves web-interactivity for visually impaired users by adding conversational navigation to Chrome. Browser extension in {\bf JavaScript}, used Google Speech and Voice APIs}
-      \resumeSubItem{Basketball bets}
-      {Compiled fantasy basketball betting data from rotogrinders and trained a tree-based model to pick teams and make predictions. Made \$60k in backtests.}
+      {Created a {\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
+      % \resumeSubItem{Vision}
+      % {Improves web-interactivity for visually impaired users by adding conversational navigation to Chrome. Browser extension in {\bf JavaScript}, used Google Speech and Voice APIs}
     }
 
   \resumeSubHeadingListEnd
@@ -213,21 +236,33 @@
 %--------HONORS--------------------------
 \section{Honors}
   \resumeSubHeadingListStart
+  \iftoggle{Finance}{
+    \resumeSubItem{Jane Street SEE}{Among 32 students selected nationally for quant education program, played electronic trading games, attended lectures on Bayesian thinking, market-making, arbitrage, biases}
+    \resumeSubItem{Nexus Fellowship}{Selected for D.E. Shaw's sophomore fellowship program of about 30 students selected nationally}
+    \resumeSubItem{Apple Swift Challenge 2020}{{\bf One of 3 students globally} featured on \href{https://www.apple.com/newsroom/2020/06/apples-wwdc20-swift-student-challenge-winners-determined-to-shape-the-future/}{apple.com}, presented to CEO Tim Cook}
+    \resumeSubItem{IOI}{Qualified for Indian National Olympiad in Informatics: programming contest for selecting India's IOI team}
+    \resumeSubItem{Apple WWDC Scholar 2019}{one of the 10 students nationally who presented project to CEO Tim Cook}
+    \resumeSubItem{Published}{Paper on detecting Parkinson's diseases using recurrent neural networks at {\bf MIT IEEE URTC}}
+    \resumeSubItem{Grand Prize Winner}{Google Code-in, open-software development contest, worked on a machine learning visual IDE}
+  }{
+    \resumeSubItem{Nexus Fellowship}{Selected for D.E. Shaw's sophomore fellowship program of about 30 students}
     \resumeSubItem{Winner}{Apple Swift Student Challenge 2020, featured on \href{https://www.apple.com/newsroom/2020/06/apples-wwdc20-swift-student-challenge-winners-determined-to-shape-the-future/}{apple.com}, presented project to CEO Tim Cook}
     \resumeSubItem{IOI}{Qualified for Indian National Olympiad in Informatics: programming contest for selecting India's IOI team}
     \resumeSubItem{Winner}{Apple World Wide Developer Conference Scholarship 2019, presented project to CEO Tim Cook}
-    \resumeSubItem{Published}{Paper on detecting Parkinson's diseases using recurrent neural networks at {\bf MIT IEEE URTC}}
+    \resumeSubItem{MIT IEEE}{Paper on detecting Parkinson's diseases using recurrent neural networks at {\bf MIT IEEE URTC}}
     \resumeSubItem{Grand Prize Winner}{Google Code-in, open-software development contest, worked on a machine learning visual IDE}
     \resumeSubItem{Winner}{Enterpreneurship summit organized by University of Melbourne and ASES, Stanford University}
+  }
   \resumeSubHeadingListEnd
 %----------------------------------------
 
 
 %--------PROGRAMMING SKILLS------------
-\section{Programming Skills}
+\section{Skills}
  \resumeSubHeadingListStart
-  \resumeSubItem{Languages}{C++, Python, Javascript, SQL, Java, Swift, Go}
-  \resumeSubItem{Technologies}{AWS Lambda, React, React Native, Kubernetes, Tensorflow, PyTorch, Scikit-Learn, Pandas, Numpy}
+  \resumeSubItem{Languages}{C++, Python, Javascript, Java, Swift, Go, Rust}
+  \resumeSubItem{Technologies}{Kafka, Solr, Cuda, Pandas, Numpy, Scikit-learn, Tensorflow, PyTorch}
+  \resumeSubItem{Interests}{3D Printing, Real-time Strategy games, Aviation, Weightlifting, Architecture, Soccer, Fashion}
  \resumeSubHeadingListEnd
 
 
