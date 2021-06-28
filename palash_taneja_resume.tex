@@ -36,7 +36,7 @@
 % Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+}{}{0em}{}[\color{CornflowerBlue}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -45,13 +45,13 @@
 % Custom commands
 \newcommand{\resumeItem}[2]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+    \textbf{#1}{: #2\vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeItemNoBold}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1\vspace{-2pt}}
   }
 }
 
@@ -64,11 +64,18 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
+  \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProject}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeSubheadingTop}[4]{
@@ -80,9 +87,10 @@
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-5pt}
+    \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {\bf #1} &  #2 \\
+    \end{tabular*}\vspace{-4pt}
 }
 
 \newcommand{\resumeSubSubheadingTop}[2]{
@@ -91,18 +99,18 @@
     \end{tabular*}\vspace{-2pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-5pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 
 %----------Variables-------------
 \newtoggle{Finance}
-\togglefalse{Finance}
+\toggletrue{Finance}
 %--------------------------------
 
 
@@ -124,7 +132,7 @@
   \resumeSubHeadingListStart
     \resumeSubheadingTop
       {University of Texas at Austin}{Austin, TX}
-      {Bachelor's of Science in Computer Science Honors;  GPA: 3.85}{Aug 2019 -- May 2023}
+      {BS in Computer Science Honors;  GPA: 3.85}{Aug 2019 -- May 2023}
       \resumeSubHeadingListStart
       \vspace*{-4pt}
         \resumeItemNoBold{Machine Learning Honors, Computer Networks, Concurrency Hon., Network Security Hon., Operating Systems Hon.}
@@ -160,30 +168,18 @@
       \resumeItemListStart
         % \resumeItem{Derivatives}
         % {Worked on team doing real-time financial derivatives data analysis in Python.}
-        \resumeItem{Data Science}{Designed anomaly detection for machine learning system in {\bf scikit-learn} using statistical methods}
-        \resumeItem{Backend}{Improved SQL database queries, increasing performance for my workloads by upto {\bf 500\%}}
-        \resumeItem{Full Stack}
-          {Deployed a data visualization web-app in {\bf Python (Flask)} and {\bf React}. Project led to improved employee productivity by decreasing time to get key metrics by 10x}
+        \resumeItemNoBold{Designed anomaly detection for machine learning system in {\bf scikit-learn} using statistical methods}
+        \resumeItemNoBold{Improved SQL database queries, increasing performance for my workloads by upto {\bf 500\%}}
+        \resumeItemNoBold{Deployed a data visualization web-app in {\bf Python (Flask)} and {\bf React}. Project led to improved employee productivity by decreasing time to get key metrics by 10x}
       \resumeItemListEnd
 
 
-      \iftoggle{Finance}{
-        \resumeSubheading
-        {University Computational Finance}{Austin, TX}
-        {Director}{Jan 2021 - Present}
-        \resumeItemListStart
-          \resumeItem{Arbitrage}{Developed project in C++ to trade on arbitrage in virtual economies of games like TF2 and CSGO}
-          \resumeItem{SPACs}{Researched arbitrage in Special Acquisition Companies and products related to them: warrants}
-        \resumeItemListEnd
-      }{
-      }
-
-      \resumeSubheading
-      {Swift Developer}{Austin, TX}{Independent Work}{Jun 2019 - Present}
-      \resumeItemListStart
-        \resumeItem{WWDC 2020}{Was one of the 3 students worldwide featured on \href{https://www.apple.com/newsroom/2020/06/apples-wwdc20-swift-student-challenge-winners-determined-to-shape-the-future/}{apple.com} and presented project to Tim Cook}
-        \resumeItem{WWDC 2019}{Was one of the 10 students worldwide selected to present project to Apple's CEO Tim Cook}
-      \resumeItemListEnd
+      % \resumeSubSubheading
+      % {Swift Developer}{Jun 2019 - Present}
+      %   \resumeItemListStart
+      %     \resumeItem{WWDC 2020}{Was one of the 3 students worldwide featured on \href{https://www.apple.com/newsroom/2020/06/apples-wwdc20-swift-student-challenge-winners-determined-to-shape-the-future/}{apple.com} and presented project to Tim Cook}
+      %     \resumeItem{WWDC 2019}{Was one of the 10 students worldwide selected to present project to Apple's CEO Tim Cook}
+      %   \resumeItemListEnd
       
 % --------Multiple Positions Heading------------
 %    \resumeSubSubheading
@@ -209,16 +205,49 @@
 %-----------PROJECTS-----------------
 \section{Leadership and Projects}
   \resumeSubHeadingListStart
-      \resumeSubItem{Operating Systems TA}
-        {Guided students to build pre-emptive multithreading, virtual memory, filesystems, and more}
-      \resumeSubItem{Computer Architecture Research}
-        {Researched on using machine learning methods (LSTMs) to find a cache replacement policy that has an 8.9\% better cache hit-rate improvement over LRU}
-      \resumeSubItem{CoronOS}
-        {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors (AARCH64).}
-      \resumeSubItem{\href{https://lovesong.dating}{LoveSong}}
-      {Created a dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
-      \resumeSubItem{Dubit}
-      {Created a {\bf Python} and {\bf Node.js} platform that creates real-time translations of YouTube videos. {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
+
+      \iftoggle{Finance}{
+          \resumeSubSubheading
+          {University Computational Finance}{Director}
+          \resumeItemListStart
+            \resumeItemNoBold{Developed trading bot to trade on pricing arbitrage in virtual economies of games like TF2 and CSGO}
+            \resumeItemNoBold{Lead teams of analysts and developers on weekly quantitative projects combining computer science and finance}
+          \resumeItemListEnd
+        }{
+        }
+
+      \resumeSubSubheading{Swift iOS Development}{Solo projects}
+        \resumeItemListStart
+          \resumeItemNoBold{Was {\bf one of the 3 students worldwide} featured on \href{https://www.apple.com/newsroom/2020/06/apples-wwdc20-swift-student-challenge-winners-determined-to-shape-the-future/}{\underline{apple.com}} and presented a pandemic simulator to Tim Cook}
+          \resumeItemNoBold{Won scholarships to Apple's conference and was one of 10 students to present my project Dubit to Tim Cook}
+      \resumeItemListEnd
+      \resumeSubSubheading{Dubit}{Solo project}
+        \resumeItemListStart
+          \resumeItemNoBold{Developed platform in Python for real-time audio translations for YouTube videos}
+          \resumeItemNoBold{Designed state-of-the-art algorithm for creating translated audio synced with the original video}
+          \resumeItemNoBold{{\bf \$100k grant from IBM} for making education more accessible in developing countries}
+        \resumeItemListEnd
+
+      \resumeSubSubheading{\href{https://github.com/Cloud-CV/Fabrik}{\underline{Fabrik}}}{Open-source contributor}
+      \resumeItemListStart
+        \resumeItemNoBold{Developed tool to generate Pytorch and Tensorflow code for models created in Fabrik--a visual neural net IDE}
+        \resumeItemNoBold{{\bf Grand Prize Winner}, Google Code-in out of 3550 students for my contributions to Fabrik}
+        \resumeItemNoBold{Mentored over 15 high-school students in open-source development and git for Google's Code-in contest}
+      \resumeItemListEnd
+
+      \resumeSubSubheading{Operating Systems Teaching Assistant}{Jan 2021 - Present}
+
+
+      % \resumeSubItem{Operating Systems TA}
+      %   {Guided students to build pre-emptive multithreading, virtual memory, filesystems, and more}
+      % \resumeSubItem{Computer Architecture Research}
+      %   {Researched on using machine learning methods (LSTMs) to find a cache replacement policy that has an 8.9\% better cache hit-rate improvement over LRU}
+      % \resumeSubItem{CoronOS}
+      %   {Functional Operating System kernel and GUI from scratch in {\bf C++}, managed a team of 60 peers, and worked on porting a full kernel from x86 to {\bf embedded systems} running ARM processors (AARCH64).}
+      % \resumeSubItem{\href{https://lovesong.dating}{LoveSong}}
+      % {Created a dating platform that matches people using a clustering machine learning algorithms based on their music taste. 500 users in 3 days. Backend in {\bf Express.js, sqlite3}; ML in {\bf scikit-learn}; deployed on {\bf AWS Lambda}.}
+      % \resumeSubItem{Dubit}
+      %  {\bf \$100k grant from IBM} for making education more accessible in developing countries.}
   \resumeSubHeadingListEnd
 
 %
@@ -227,16 +256,14 @@
 \section{Honors}
   \resumeSubHeadingListStart
   \iftoggle{Finance}{
-    \resumeSubItem{Jane Street SEE}{Among 32 students selected nationally for quant education program, played electronic trading games, attended lectures on Bayesian thinking, market-making, arbitrage, biases}
-    \resumeSubItem{Nexus Fellowship}{Selected for D.E. Shaw's sophomore fellowship program of about 30 students selected nationally}
+    \resumeSubItem{Published}{Paper on detecting Parkinson's diseases using handrwriting samples at {\bf MIT IEEE URTC}}
     \resumeSubItem{IOI}{Qualified for Indian National Olympiad in Informatics: programming contest for selecting India's IOI team}
-    \resumeSubItem{Published}{Paper on detecting Parkinson's diseases using recurrent neural networks at {\bf MIT IEEE URTC}}
-    \resumeSubItem{Grand Prize Winner}{Google Code-in, open-software development contest, worked on a machine learning visual IDE}
+    \resumeSubItem{Jane Street SEE}{Among 32 students selected nationally for quant education program, played electronic trading games, attended lectures on Bayesian thinking, market-making, arbitrage, biases}
+    \resumeSubItem{D.E. Shaw Nexus Fellowship}{Selected for sophomore fellowship program of about 30 students}
   }{
-    \resumeSubItem{Nexus Fellowship}{Selected for D.E. Shaw's sophomore fellowship program of about 30 students}
+    \resumeSubItem{D.E. Shaw Nexus Fellowship}{Selected for sophomore fellowship program of about 30 students}
     \resumeSubItem{IOI}{Qualified for Indian National Olympiad in Informatics: programming contest for selecting India's IOI team}
     \resumeSubItem{MIT IEEE}{Paper on detecting Parkinson's diseases using recurrent neural networks at {\bf MIT IEEE URTC}}
-    \resumeSubItem{Grand Prize Winner}{Google Code-in, open-software development contest, worked on a machine learning visual IDE}
     \resumeSubItem{Winner}{Enterpreneurship summit organized by University of Melbourne and ASES, Stanford University}
   }
   \resumeSubHeadingListEnd
