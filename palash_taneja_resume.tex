@@ -99,7 +99,7 @@
     \end{tabular*}\vspace{-2pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-5pt}}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3.8pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -110,7 +110,7 @@
 
 %----------Variables-------------
 \newtoggle{Finance}
-\toggletrue{Finance}
+\togglefalse{Finance}
 %--------------------------------
 
 
@@ -132,12 +132,11 @@
   \resumeSubHeadingListStart
     \resumeSubheadingTop
       {University of Texas at Austin}{Austin, TX}
-      {BS in Computer Science Honors;  GPA: 3.85}{Aug 2019 -- May 2023}
-      \resumeSubHeadingListStart
-      \vspace*{-4pt}
-        \resumeItemNoBold{Machine Learning Honors, Computer Networks, Concurrency Hon., Network Security Hon., Operating Systems Hon.}
-        \resumeItemNoBold{Natural Sciences Waiver, highly competitive scholarship awarded to $<$10 students out of 12,000 undergraduates}
-      \resumeSubHeadingListEnd
+      {BS in Computer Science Honors;  Natural Sciences Scholar; GPA: 3.85}{Aug 2019 -- May 2023}
+
+      {\small Machine Learning Hon., Computer Networks, Concurrency Hon., Network Security Hon., Operating Systems Hon.}
+
+      \vspace{-4pt}
       % \iftoggle{Finance}
       % {
       %   \resumeSubSubheading{Machine Learning Honors, Computer Networks, Concurrency Hon., Network Security Hon., Operating Systems Hon.}{}
@@ -156,9 +155,9 @@
     {Bloomberg L.P.}{New York, NY}
     {Software Engineering Intern}{May 2021 - Present}
     \resumeItemListStart
-      \resumeItemNoBold{Designed a search engine architecture to serve user queries on news data visualization using {\bf Apache Solr}}
-      \resumeItemNoBold{Aggregated news user analytics in {\bf C++} from a global news and user network using {\bf Kafka}}
-      \resumeItemNoBold{Organized a developer education program for using No-SQL over traditional SQL databases in Bloomberg News}
+      \resumeItemNoBold{Designed search engine architecture in Solr to serve user queries on news data visualization}
+      \resumeItemNoBold{Aggregated news user analytics in C++ from a global news and user network using Kafka}
+      \resumeItemNoBold{Organized developer education program for using No-SQL over SQL databases in Bloomberg News}
     \resumeItemListEnd
 
 
@@ -168,9 +167,9 @@
       \resumeItemListStart
         % \resumeItem{Derivatives}
         % {Worked on team doing real-time financial derivatives data analysis in Python.}
-        \resumeItemNoBold{Designed anomaly detection for machine learning system in {\bf scikit-learn} using statistical methods}
-        \resumeItemNoBold{Improved SQL database queries, increasing performance for my workloads by upto {\bf 500\%}}
-        \resumeItemNoBold{Deployed a data visualization web-app in {\bf Python (Flask)} and {\bf React}. Project led to improved employee productivity by decreasing time to get key metrics by 10x}
+        \resumeItemNoBold{Developed machine learning monitoring system in Python, React; decreased time to get key metrics by 9x}
+        \resumeItemNoBold{Designed anomaly detection for machine learning system in scikit-learn using statistical methods}
+        \resumeItemNoBold{Improved SQL database queries, increasing performance for my workloads by upto 5x}
       \resumeItemListEnd
 
 
@@ -211,15 +210,15 @@
           {University Computational Finance}{Director}
           \resumeItemListStart
             \resumeItemNoBold{Developed trading bot to trade on pricing arbitrage in virtual economies of games like TF2 and CSGO}
-            \resumeItemNoBold{Lead teams of analysts and developers on weekly quantitative projects combining computer science and finance}
+            \resumeItemNoBold{Lead teams of analysts on weekly quantitative projects combining computer science and finance}
           \resumeItemListEnd
         }{
         }
 
-      \resumeSubSubheading{Swift iOS Development}{Solo projects}
+      \resumeSubSubheading{Swift Development}{Solo projects}
         \resumeItemListStart
-          \resumeItemNoBold{Was {\bf one of the 3 students worldwide} featured on \href{https://www.apple.com/newsroom/2020/06/apples-wwdc20-swift-student-challenge-winners-determined-to-shape-the-future/}{\underline{apple.com}} and presented a pandemic simulator to Tim Cook}
-          \resumeItemNoBold{Won scholarships to Apple's conference and was one of 10 students to present my project Dubit to Tim Cook}
+          \resumeItemNoBold{{\bf 2020: One of three students worldwide} featured on \href{https://www.apple.com/newsroom/2020/06/apples-wwdc20-swift-student-challenge-winners-determined-to-shape-the-future/}{\underline{apple.com}}, presented pandemic simulator to Tim Cook}
+          \resumeItemNoBold{{\bf 2019: One of ten developers worldwide} to present my project Dubit to CEO Tim Cook}
       \resumeItemListEnd
       \resumeSubSubheading{Dubit}{Solo project}
         \resumeItemListStart
@@ -230,12 +229,15 @@
 
       \resumeSubSubheading{\href{https://github.com/Cloud-CV/Fabrik}{\underline{Fabrik}}}{Open-source contributor}
       \resumeItemListStart
-        \resumeItemNoBold{Developed tool to generate Pytorch and Tensorflow code for models created in Fabrik--a visual neural net IDE}
+        \resumeItemNoBold{Developed tool to generate Pytorch and Tensorflow code for models created in visual neural net IDE}
         \resumeItemNoBold{{\bf Grand Prize Winner}, Google Code-in out of 3550 students for my contributions to Fabrik}
-        \resumeItemNoBold{Mentored over 15 high-school students in open-source development and git for Google's Code-in contest}
+        \resumeItemNoBold{Mentored 15 high-schoolers in open-source development and git for Google's Code-in contest}
       \resumeItemListEnd
 
       \resumeSubSubheading{Operating Systems Teaching Assistant}{Jan 2021 - Present}
+      \resumeItemListStart
+        \resumeItemNoBold{Taught C++ for systems programming, multithreading, virtual memory, file systems, networks to 50 students}
+      \resumeItemListEnd
 
 
       % \resumeSubItem{Operating Systems TA}
@@ -253,18 +255,21 @@
 %
 
 %--------HONORS--------------------------
-\section{Honors}
+\section{Honors and Publications}
   \resumeSubHeadingListStart
   \iftoggle{Finance}{
-    \resumeSubItem{Published}{Paper on detecting Parkinson's diseases using handrwriting samples at {\bf MIT IEEE URTC}}
+    \resumeSubItem{MIT IEEE}{Paper on detecting Parkinson's diseases using handwriting samples and recurrent neural networks}
     \resumeSubItem{IOI}{Qualified for Indian National Olympiad in Informatics: programming contest for selecting India's IOI team}
     \resumeSubItem{Jane Street SEE}{Among 32 students selected nationally for quant education program, played electronic trading games, attended lectures on Bayesian thinking, market-making, arbitrage, biases}
-    \resumeSubItem{D.E. Shaw Nexus Fellowship}{Selected for sophomore fellowship program of about 30 students}
+    \resumeSubItem{D.E. Shaw Nexus Fellowship}{Selected for sophomore fellowship program of about 30 students nationally}
+    \resumeSubItem{Natural Sciences Waiver}{highly competitive scholarship awarded to $<$10 students out of 12,000 undergraduates}
+    \resumeSubItem{ASES Stanford}{Winner, Enterpreneurship summit organized by ASES Stanford University}
   }{
-    \resumeSubItem{D.E. Shaw Nexus Fellowship}{Selected for sophomore fellowship program of about 30 students}
+    \resumeSubItem{D.E. Shaw Nexus Fellowship}{Selected for sophomore fellowship program of about 30 students nationally}
     \resumeSubItem{IOI}{Qualified for Indian National Olympiad in Informatics: programming contest for selecting India's IOI team}
-    \resumeSubItem{MIT IEEE}{Paper on detecting Parkinson's diseases using recurrent neural networks at {\bf MIT IEEE URTC}}
-    \resumeSubItem{Winner}{Enterpreneurship summit organized by University of Melbourne and ASES, Stanford University}
+    \resumeSubItem{MIT IEEE}{Paper on detecting Parkinson's diseases using handwriting samples and recurrent neural networks}
+    \resumeSubItem{ASES Stanford}{Winner, Enterpreneurship summit organized by ASES Stanford University}
+    \resumeSubItem{Natural Sciences Waiver}{highly competitive scholarship awarded to $<$10 students out of 12,000 undergraduates}
   }
   \resumeSubHeadingListEnd
 %----------------------------------------
